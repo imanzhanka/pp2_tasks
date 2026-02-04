@@ -1,43 +1,39 @@
-#example 1 - arithmetic operations
-x = 15
-y = 4
+# demo1— базовые арифметические операции
+a = 28
+b = 6
 
-print(x + y)
-print(x - y)
-print(x * y)
-print(x / y)
-print(x % y)
-print(x ** y)
-print(x // y)
+print(a + b)
+print(a - b)
+print(a * b)
+print(a / b)
+print(a % b)
+print(a ** b)
+print(a // b)
 
-#example 2 - assignment operators
-numbers = [1, 2, 3, 4, 5]
+#demo2 — оператор присваивания в выражении
+items = [10, 20, 30, 40, 50, 60]
 
-if (count := len(numbers)) > 3:
-    print(f"List has {count} elements")
+if (total := len(items)) > 4:
+    print(f"В списке {total} элементов")
 
-#example 3 - comparison operators
-x = 5
+# demo 3 операторы сравнения
+value = 7
 
-print(1 < x < 10) #chain comparison operators
+print(2 < value < 12)# цепочка сравнений
+print(2 < value and value < 12)  # то же самое через and
 
-print(1 < x and x < 10)#logical operation
- 
-#example 4 - identity operators
-x = ["apple", "banana"]
-y = ["apple", "banana"]
-z = x
+# demo 4 — операторы тождественности
+box1 = ["cat", "dog"]
+box2 = ["cat", "dog"]
+box3 = box1
 
-print(x is z)
-print(x is not y)
-print(x == y)
+print(box1 is box3)
+print(box1 is not box2)
+print(box1 == box2)
 
-#example 5 - membership operators
-text = "Hello World"
+#demo 5 — операторы принадлежнсти
+message = "OpenAI GPT"
 
-print("H" in text)
-print("hello" in text)
-print("z" not in text)
- 
-
-
+print("O" in message)
+print("gpt" in message)
+print("X" not in message)

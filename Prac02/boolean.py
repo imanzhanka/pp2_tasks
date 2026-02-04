@@ -1,38 +1,37 @@
-#example 1 
-print(10 > 9)
-print(10 == 9)
-print(10 < 9)
+# demo1—сравнение чисел
+print(42 > 17)
+print(42 == 17)
+print(42 < 17)
 
-#example 2
-print(bool("Hello"))
-x = "Hello"
-y = 15
-print(bool(x))
-print(bool(y))
+# demo 2—приведение к bool
+print(bool("Python"))
+aura = "Python"
+zen = -3
+print(bool(aura))
+print(bool(zen))
 
-#example 3 - false values
-bool(False)
-bool(None)
-bool(0)
-bool("")
-bool(())
-bool([])
-bool({})
+#demo3— значения, которые дают False
+print(bool(False))
+print(bool(None))
+print(bool(0))
+print(bool(""))
+print(bool(()))
+print(bool([]))
+print(bool({}))
 
-#example 4 - false (addition)
-class myclass():
-  def __len__(self):
-    return 0
+# demo4— объект, который считается False
+class GhostBox:
+    def __len__(self):
+        return 0
 
-myobj = myclass()
-print(bool(myobj))
+shadow = GhostBox()
+print(bool(shadow))
 
-#example 5
-def myFunction() :
-  return True
+# demo 5 функция с логическим результатом
+def crystal_switch():
+    return True
 
-if myFunction():
-  print("YES!")
+if crystal_switch():
+    print("Доступ разрешён ")
 else:
-  print("NO!")
-  
+    print("Доступ заблокирован ")

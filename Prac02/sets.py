@@ -1,67 +1,72 @@
-# is unordered, unchangeable*, and unindexed, unoque 
-# CAN NOT CHANGE but you can add elements
+# множества: неупорядоченне, неизменяемые*, уникальные элементы
+# изменять нельзя, но можно добавлять новые элементы
+# demo1 — создание множества
+colors = {"red", "blue", "green"}
+print(colors)
 
-#example1
-thisset = {"apple", "banana", "cherry"}
-print(thisset)
-thisset = {"apple", "banana", "cherry", True, 1, 2}
-print(thisset)
+colors = {"red", "blue", "green", True, 0, 2}
+print(colors)
 
-thisset = set(("apple", "banana", "cherry")) # note the double round-brackets
-print(thisset)
+colors = set(("red", "blue", "green")) #двойные скобки
+print(colors)
 
-#example 2 add = remove
-thisset = {"apple", "banana", "cherry"}
-thisset.add("orange")
-print(thisset)
+# demo2—добавление и удаление элементов
+fruits = {"apple", "banana", "cherry"}
+fruits.add("kiwi")
+print(fruits)
 
+tropics = {"mango", "pineapple", "papaya"}
+fruits.update(tropics)# добавить элементы из другого множества
+print(fruits)
 
-tropical = {"pineapple", "mango", "papaya"}
-thisset.update(tropical) # add items from another set into the current set
-print(thisset)
-thisset.remove("banana")
-print(thisset)
+fruits.remove("banana")  #удаляет элемент, вызовет ошибку если нет
+print(fruits)
 
-thisset = {"apple", "banana", "cherry"}
-thisset.discard("banana")
-print(thisset)
+fruits = {"apple", "banana", "cherry"}
+fruits.discard("banana")  #безопасное удаление
+print(fruits)
 
-x = thisset.pop()#removing random
+removed_item = fruits.pop()  # удаляет случайный элемент
 
-#example3 - joinig sets 
-set1 = {"a", "b", "c"}
-set2 = {1, 2, 3}
+# demo 3 — объединение и операции с множествами
+setA = {"x", "y", "z"}
+setB = {10, 20, 30}
 
-set3 = set1.union(set2)
-print(set3)
-set3 = set1 | set2
-print(set3)
+setC = setA.union(setB)
+print(setC)
 
-set1.update(set2)
-print(set1)
+setC = setA | setB
+print(setC)
 
-set3 = set1.intersection(set2)
-print(set3)
-set3 = set1 & set2
-print(set3)
-set1.intersection_update(set2)
-print(set1)
+setA.update(setB)
+print(setA)
 
-set3 = set1.difference(set2)
-print(set3)
-set1.difference_update(set2)
+setC = setA.intersection(setB)
+print(setC)
 
-set3 = set1.symmetric_difference(set2)
-print(set3)
-set3 = set1 ^ set2
-print(set3)
+setC = setA & setB
+print(setC)
 
-#example4 - frozenset
-x = frozenset({"apple", "banana", "cherry"})
-print(x)
-print(type(x))
+setA.intersection_update(setB)
+print(setA)
 
-#example5 
-s = {1, 2, 3}
-s.add(4)
-print(s)
+setC = setA.difference(setB)
+print(setC)
+
+setA.difference_update(setB)
+
+setC = setA.symmetric_difference(setB)
+print(setC)
+
+setC = setA ^ setB
+print(setC)
+
+# demo 4 — неизменяемое множество
+frozen_colors = frozenset({"red", "blue", "green"})
+print(frozen_colors)
+print(type(frozen_colors))
+
+# demo 5 — добавление элементов
+numbers = {1, 2, 3}
+numbers.add(4)
+print(numbers)

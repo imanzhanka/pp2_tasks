@@ -1,40 +1,38 @@
-#ex1: if in condition
-is_logged_in = True
-if is_logged_in:
-  print("Welcome back!")
+#demo1 — простая проверка условия
+user_active = True
+if user_active:
+    print("Сеанс начат 👋")
 
-#ex2:elif skips all remaining conditions
-a = 2
-b = 330
-if b > a:
-  print("b is greater than a")
-elif a == b:
-  print("a and b are equal")
+# demo 2 —elif пропускает остальные варианты
+x1 = 7
+x2 = 45
+if x2 > x1:
+    print("Второе число больше первого")
+elif x1 == x2:
+    print("Числа равны")
 
+#demo 3 — сокращённый if
+print("Первый") if x1 > x2 else print("Второй")
 
-#ex3:short
-print("A") if a > b else print("B")
+#demo 4 — логическое отрицание
+if not x1 > x2:
+    print("x1 НЕ больше x2")
 
-#ex4:logical
-if not a > b:
-  print("a is NOT greater than b")
+# demo 5— вложенное условие
+level = 12
+if level > 10:
+    print("Выше десяти,")
+    if level > 20:
+        print("и выше двадцати!")
+    else:
+        print("но не выше двадцати.")
 
+# demo 6 —pass как заглушка
+score = -3
 
-#ex5:nested if
-x = 5
-if x > 10:
-  print("Above ten,")
-  if x > 20:
-    print("and also above 20!")
-  else:
-    print("but not above 20.")
-
-#ex6:pass
-value = 50
-
-if value < 0:
-  print("Negative value")
-elif value == 0:
-  pass # Zero case - no action needed
+if score < 0:
+    print("Отрицательное значение")
+elif score == 0:
+    pass  # ноль — ничего не делаем
 else:
-  print("Positive value")
+    print("Положительное значение")

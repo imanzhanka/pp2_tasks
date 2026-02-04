@@ -1,31 +1,33 @@
-#ex1
-fruits = ["apple", "banana", "cherry"]
-for x in fruits:
-  print(x)
-#ex2
-for x in "banana":
-  print(x)
+# demo1— перебор элементов списка
+colors = ["red", "blue", "green"]
+for shade in colors:
+    print(shade)
 
-#ex3
-fruits = ["apple", "banana", "cherry"]
-for x in fruits:
-  print(x)
-  if x == "banana":
-    break
+# demo 2— перебор символов строки
+for letter in "Python":
+    print(letter)
 
-#ex4
-fruits = ["apple", "banana", "cherry"]
-for x in fruits:
-  if x == "banana":
-    break
-  print(x)
+#demo 3— остановка цикла по условию
+pets = ["cat", "dog", "parrot"]
+for animal in pets:
+    print(animal)
+    if animal == "dog":
+        break
 
-#ex5
-fruits = ["apple", "banana", "cherry"]
-for x in fruits:
-  if x == "banana":
-    continue
-  print(x)
+#demo4 — break до вывода
+cities = ["Rome", "Paris", "Berlin"]
+for place in cities:
+    if place == "Paris":
+        break
+    print(place)
 
-  for x in range(6):
-   print(x)
+# demo5 — пропуск элемента
+numbers = ["one", "two", "three"]
+for word in numbers:
+    if word == "two":
+        continue
+    print(word)
+
+# demo 6 — цикл с range
+for counter in range(6):
+    print(counter)

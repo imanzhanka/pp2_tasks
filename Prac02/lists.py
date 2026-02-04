@@ -1,88 +1,82 @@
+#demo1 — создание списка
+box = list(("red", "blue", "green"))  # двойные скобки обязательны
+print(box)
 
-#example 1 - creatibg a list
-thislist = list(("apple", "banana", "cherry")) # note the double round-brackets
-print(thislist)
+palette = ["red", "blue", "green"]
 
-mylist = ["apple", "banana", "cherry"]
+# demo 2 — изменение, добавление и удаление элементов
 
-#example 2 - change kist items + add items + remove
+box[1:2] = ["purple", "yellow"]
+print(box)
 
-thislist[1:2] = ["blackcurrant", "watermelon"]
-print(thislist)
+box.insert(2, "yellow")
+print(box)
 
+box.append("black")
+print(box)
 
-thislist.insert(2, "watermelon")
-print(thislist)
+box = ["red", "blue", "green"]
+warm = ["orange", "pink", "brown"]
+box.extend(warm)
+print(box)
 
-thislist.append("orange")
-print(thislist)
+box = ["red", "blue", "green", "blue", "white"]
+box.remove("blue")# удаляется только первое совпадение
+print(box)
 
-thislist = ["apple", "banana", "cherry"]
-tropical = ["mango", "pineapple", "papaya"]
-thislist.extend(tropical)
-print(thislist)
+box = ["red", "blue", "green"]
+box.pop(1)
+print(box)# удаление по индексу
 
-thislist = ["apple", "banana", "cherry", "banana", "kiwi"]
-thislist.remove("banana")
-print(thislist) #delete first accurance of specific 
+del box[0]
+print(box)#удаление по индексу
 
-thislist = ["apple", "banana", "cherry"]
-thislist.pop(1)
-print(thislist)#remove by index or last
+box.clear()#очищает список полностью
 
-del thislist[0]
-print(thislist)#remove by index or whole list
+#demo 3 —list comprehension
+box = ["red", "blue", "green"]
+[print(color) for color in box]
 
-thislist.clear()
+shades = ["red", "blue", "green", "white", "black"]
 
-#example 3 - comprehension
-thislist = ["apple", "banana", "cherry"]
-[print(x) for x in thislist]
+filtered = [c for c in shades if "e" in c]
+print(filtered)
 
-fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+nums = [n for n in range(12) if n % 2 == 0]
 
-newlist = [x for x in fruits if "a" in x]
+upper_colors = [c.upper() for c in shades]
 
-print(newlist)
+# demo 4 — сортировка, копирование, разворот
+scores = [88, 12, 47, 99, 30]
+scores.sort(reverse=True)
+print(scores)
 
-newlist = [x for x in range(10) if x < 5]
+def distance(val):
+    return abs(val - 40)
 
-newlist = [x.upper() for x in fruits]
+scores = [88, 12, 47, 99, 30]
+scores.sort(key=distance)
+print(scores)
 
+names = ["Lime", "orange", "Apple", "grape"]
+names.reverse()
+print(names)
 
-#example 4 - sort + copy + join
-thislist = [100, 50, 65, 82, 23]
-thislist.sort(reverse = True)
-print(thislist)
+copy1 = names.copy()
 
-def myfunc(n):
-  return abs(n - 50)
+box = ["red", "blue", "green"]
+copy2 = list(box)
+print(copy2)
 
-thislist = [100, 50, 65, 82, 23]
-thislist.sort(key = myfunc) # sorting data that was implemented after a function
-print(thislist)
+# demo 5 — объединение списков
+group1 = ["x", "y", "z"]
+group2 = [10, 20, 30]
 
-thislist = ["banana", "Orange", "Kiwi", "cherry"]
-thislist.reverse() #dont look at letter
-print(thislist)
+mix = group1 + group2
 
-mylist = thislist.copy()
+for item in group2:
+    group1.append(item)
+print(group1)
 
-thislist = ["apple", "banana", "cherry"]
-mylist = list(thislist) #the same as copy
-print(mylist)
-
-list1 = ["a", "b", "c"]
-list2 = [1, 2, 3]
-
-
-#example 5 - join tuples 
-
-list3 = list1 + list2
-
-for x in list2:
-  list1.append(x)
-print(list1)
-
-list1.extend(list2)
-print(list1)
+group1.extend(group2)
+print(group1)

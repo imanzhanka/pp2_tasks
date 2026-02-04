@@ -1,55 +1,52 @@
-#tuples - ordered, unchangeable, and allow duplicate values, indexed
 
-#examples 1
-thistuple = ("apple", "banana", "cherry")
-# you have to add a comma after the item, otherwise Python will not recognize it as a tuple.
-thistuple = ("apple",)
-print(type(thistuple))
-thistuple = tuple(("apple", "banana", "cherry")) # note the double round-brackets
-print(thistuple)
-
-#example 2 - existance + convert tuples  
-if "apple" in thistuple:
-  print("Yes, 'apple' is in the fruits tuple")
-
-# You can convert the tuple into a list, change the list,
-#  and convert the list back into a tuple
-
-x = ("apple", "banana", "cherry")
-y = list(x)
-y[1] = "kiwi"
-x = tuple(y)
-
-print(x)
-
-y = ("orange",) # You are allowed to add tuples to tuple
-thistuple += y
-
-print(thistuple)
-del thistuple
+# Кортежи — упорядоченные, неизменяемые, допускают дубликаты, индексируемые
 
 
+# demo 1 —создание кортежей с необычными именами
+cosmic_tuple = ("quark", "lepton", "boson")
+#если один элемент — запятая обязательна
+single_particle = ("neutrino",)
+print(type(single_particle))
 
+cosmic_tuple = tuple(("quark", "lepton", "boson"))#двойные скобки
+print(cosmic_tuple)
 
+# demo 2проверка наличия элемента + конвертация
+if "quark" in cosmic_tuple:
+    print("Да, 'quark' присутствует в космическом кортеже")
 
-#example 3 - unpack tuples 
-fruits = ("apple", "banana", "cherry")
-(green, yellow, red) = fruits
-print(green)
-print(yellow)
-print(red)
+#конвертация кортежа в список, изменение и обратно в кортеж
+particles = ("gluon", "photon", "meson")
+particles_list = list(particles)
+particles_list[1] = "tachyon"
+particles = tuple(particles_list)
+print(particles)
 
-fruits = ("apple", "banana", "cherry", "strawberry", "raspberry")
-(green, yellow, *red) = fruits # * to the variable name  as a list:
-print(green)
-print(yellow)
-print(red)
+#добавление кортежа к другому кортежу
+extra_particle = ("graviton",)
+cosmic_tuple += extra_particle
+print(cosmic_tuple)
 
-#example 4 - join tuples 
-mytuple = fruits * 2
-print(mytuple)
+del cosmic_tuple  # удаляем кортеж полностью
 
-#example 5 - methods
-print(fruits.index("banana"))  
-print(fruits.count("banana"))  
+# demo 3 — распаковка кортежей
+fundamentals = ("up", "down", "strange")
+(a1, a2, a3) = fundamentals
+print(a1)
+print(a2)
+print(a3)
 
+#распаковка с остатком
+particles_mix = ("electron", "muon", "tau", "charm", "bottom")
+(x1, x2, *rest_particles) = particles_mix  # * собирает остаток в список
+print(x1)
+print(x2)
+print(rest_particles)
+
+#demo 4 — повторение кортежей
+duplicated_particles = particles_mix * 2
+print(duplicated_particles)
+
+# demo 5 — методы кортежей
+print(particles_mix.index("muon"))   # индекс первого вхождения
+print(particles_mix.count("muon"))   # количество вхождений
