@@ -33,6 +33,14 @@ print(box)#удаление по индексу
 
 box.clear()#очищает список полностью
 
+
+
+
+
+
+
+
+
 #demo 3 —list comprehension
 box = ["red", "blue", "green"]
 [print(color) for color in box]

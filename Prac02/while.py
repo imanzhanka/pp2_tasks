@@ -1,5 +1,5 @@
 
-# demo 1 — базовый цикл whileс необычными именами
+# demo 1 — базовый цикл while
 
 quantum_counter = 1
 while quantum_counter < 6:
