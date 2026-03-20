@@ -1,22 +1,21 @@
-import json
+# re.sub() - replace matches using a function (alternating case)
 
-ferrari = {
-    "make": "Ferrari",
-    "model": "458 Italia",
-    "price": 300000,
-    "features": ["V8", "rear-wheel drive", "carbon ceramic brakes"],
-    "available": True
-}
+import re
 
-# writing to a JSON file
-with open('ferrari_out.json', 'w') as file:
-    json.dump(ferrari, file, indent=4)
+text_to_match = "John's email is john.doe@example.com, and his backup is johndoe123@work.net."
 
-print("Saved to ferrari_out.json")
+pattern = r'\b\w+\b'
 
-# reading it back to verify
-with open('ferrari_out.json', 'r') as file:
-    loaded = json.load(file)
+def repl(match):
+    matched_word = match.group(0)
+    result = ''
+    for i in range(len(matched_word)):
+        if i % 2 == 0:
+            result += matched_word[i].lower()
+        else:
+            result += matched_word[i].upper()
+    return result
 
-print(loaded)
-print(loaded["features"])
+result = re.sub(pattern, repl, text_to_match)
+
+print(result)
